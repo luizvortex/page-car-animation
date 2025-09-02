@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+    list-style: none;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 2;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+header nav ul li {
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li:hover {
+    color: #84cc16;
+}
+
+.container {
+    background: radial-gradient(circle, #581c87, #1e3a8a, #000000);
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.list {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.list::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 80%;
+    top: 50%;
+    left: 10%;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.item-active {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+.item-active.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* ANIMAÇÕES DE SAÍDA */
+.item-active.exit-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.item-active.exit-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.car-img {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 800px;
+    transition: transform 1s ease;
+}
+
+.item-active.active .car-img {
+    transform: translate(-50%, -50%) rotate(-25deg);
+}
+
+.car-img img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+
+.content {
+    position: absolute;
+    top: 52%; 
+    right: 5%;
+    width: 450px; 
+    background-color: transparent; 
+    padding: 0; 
+    border-radius: 0; 
+    box-shadow: none;
+    color: #fff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+ 
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    border-left: none; 
+}
+
+.item-active.active .content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.content .car-information { 
+    font-size: 1.5rem; 
+    color: #fff; 
+    text-transform: capitalize; 
+    font-weight: normal; 
+    margin-bottom: 5px; 
+    opacity: 0.8; 
+}
+
+
+.content h2 {
+    font-size: 5.5em; 
+    line-height: 1em; 
+    font-weight: bold;
+    margin-bottom: 20px; 
+}
+
+
+.content p {
+    font-size: 1.1em; 
+    line-height: 1.6em;
+    color: #e5e7eb;
+    margin-bottom: 30px; 
+    max-width: 400px; 
+}
+
+
+.content .information-button {
+    padding: 12px 35px; 
+    background-color: #84cc16; 
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+    margin-top: 0; 
+    box-shadow: 0 5px 15px rgba(132, 204, 22, 0.4); 
+}
+
+.content .information-button:hover {
+    background-color: #ffffff; 
+    transform: translateY(-2px); 
+}
+
+
+.arrows {
+    position: absolute;
+    width: 90vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #84cc16;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.arrows button:hover {
+    background-color: #ffffff;
+}
+
+.arrows button img {
+    width: 20px;
+}
+
+.item-active.prepare-left {
+    transform: translateX(-100%);
+    transition: none;
+}
+
+/* Cores de fundo dos carros */
+.item-active:nth-child(1) {
+    background: radial-gradient(circle,(#581c87, #1e3a8a, #000000)); /* Vermelho metálico */
+}
+
+.item-active:nth-child(2) {
+    background: radial-gradient(circle, #460606, #3f0000, #000000cb); /* Laranja metálico */
+}
+
+.item-active:nth-child(3) {
+    background: radial-gradient(circle, #d8b000, #c77802, #000000); /* Verde metálico */
+}
+
+.item-active:nth-child(4) {
+    background: radial-gradient(circle, #1e90ff, #4682b4, #5f9ea0); /* Azul metálico */
+}
+
+#prev img {
+    transform: rotate(180deg);
+}
