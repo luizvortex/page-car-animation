@@ -4,63 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Vortex Carros</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <header>
-        <img src="./img/logo carro.png" alt="Carro">
+        <h1 class="logo-text">VORTEX</h1>
         <nav>
             <ul>
-                <li>Home</li>
+                <li href="#">Home</li>
                 <li>Carros</li>
-                <li>Fale Conosco</li>
-
+                <li>Sobre</li>
             </ul>
         </nav>
     </header>
-    <section>
+
+    <section class="container">
         <div class="list">
-            <div class="item">
+            <div class="item-active active">
                 <div class="car-img">
-                    <img src="./img/1.png" alt="Carro 1">
+                    <img src="./img/1.png" alt="Imagem do Porsche 911 Turbo">
                 </div>
                 <div class="content">
-                    <p class="car-information">
-                        Único dono
+                    <p class="car-information">Porsche</p>
+                    <h2 class="container-h2">911 GT3 (2026)</h2>
+                    <p>
+                        Durante quase 25 anos, o 911 GT3 só respeitava os limites da física – deixando o resto para
+                        trás. O design testado no automobilismo e o máximo desempenho fazem dele uma união inabalável
+                        entre pista e rua.
                     </p>
-                    <h2>
-                        Porsche 911
-                    </h2>
-                    <p class="descripiton">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae aperiam quisquam, corporis
-                        inventore deserunt ut dolor corrupti accusantium! Iure nostrum maxime iusto suscipit tenetur
-                        earum quos quae quo nam natus.
+                    <button class="information-button">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="item-active">
+                <div class="car-img">
+                    <img src="./img/2.png" alt="Imagem da Ferrari">
+                </div>
+                <div class="content">
+                    <p class="car-information">Ferrari</p>
+                    <h2 class="container-h2">SF90</h2>
+                    <p>
+                        Paixão em vermelho. Um rugido de motor que ecoa velocidade e luxo. Mais do que um carro, um
+                        ícone de design e performance que acelera o coração de qualquer entusiasta. A Ferrari é o sonho
+                        que se move, a lenda que se conquista.
                     </p>
-                    <button>
-                        Saiba Mais
-                    </button>
-
+                    <button class="information-button">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="item-active">
+                <div class="car-img">
+                    <img src="./img/3.png" alt="Imagem da Lamborghini">
+                </div>
+                <div class="content">
+                    <p class="car-information">Lamborghini</p>
+                    <h2 class="container-h2">Aventador</h2>
+                    <p>
+                        Agressivo e imponente, o Lamborghini Aventador é uma obra de arte da engenharia automotiva. Seu
+                        design angular e aerodinâmico corta o ar como uma lâmina, enquanto o rugido de seu motor V12 é
+                        uma sinfonia de poder bruto. É um carro que não pede licença, ele a toma. A essência do
+                        supercarro, traduzida em pura e implacável adrenalina.
+                    </p>
+                    <button class="information-button">Saiba Mais</button>
                 </div>
             </div>
         </div>
+
         <div class="arrows">
-            <button><img src="./img/arrow.png" alt="Seta esquerda"></button>
-            <button><img src="./img/arrow.png" alt="Seta direita"></button>
-        </div>
-        <div class="indicator">
-            <div class="number">01</div>
-            <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-        </div>
-
+            <button id="prev">
+                <img src="./img/arrow.png" alt="Seta anterior">
+            </button>
+            <button id="next">
+                <img src="./img/arrow.png" alt="Seta próxima">
+            </button>
         </div>
     </section>
+
+    <script src="./scripts.js"></script>
 </body>
 
 </html>
